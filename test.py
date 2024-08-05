@@ -10,16 +10,20 @@
 from paddleocr import PaddleOCR, draw_ocr
 
 ocr = PaddleOCR(
-    det_model_dir="/home/addstorage/codes/paddle_ocr/assets/whl/det/ch_PP-OCRv4_det_server_infer",
+    # det_model_dir="/home/addstorage/codes/paddle_ocr/assets/whl/det/ch_PP-OCRv4_det_server_infer",
+    # cls_model_dir="/home/addstorage/codes/paddle_ocr/assets/whl/cls/ch_ppocr_mobile_v2.0_cls_infer",
+    # rec_model_dir="/home/addstorage/codes/paddle_ocr/assets/whl/rec/ch_PP-OCRv4_rec_server_infer",
+
+    det_model_dir="/home/addstorage/codes/paddle_ocr/assets/whl/det/ch_PP-OCRv4_det_infer",
     cls_model_dir="/home/addstorage/codes/paddle_ocr/assets/whl/cls/ch_ppocr_mobile_v2.0_cls_infer",
-    rec_model_dir="/home/addstorage/codes/paddle_ocr/assets/whl/rec/ch_PP-OCRv4_rec_server_infer",
+    rec_model_dir="/home/addstorage/codes/paddle_ocr/assets/whl/rec/ch_PP-OCRv4_rec_infer",
     use_gpu=True,
     use_angle_cls=True,
     det_db_thresh=0.3,
     det_db_box_thresh=0.6,
     lang="ch"
 )  # need to run only once to download and load model into memory
-img_path = './test.png'
+img_path = '/home/sanqi/Desktop/test_ocr.jpg'
 result = ocr.ocr(img_path, cls=True)
 for idx in range(len(result)):
     res = result[idx]

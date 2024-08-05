@@ -12,5 +12,10 @@
 - paddlepaddle_gpu-2.4.2.post117-cp38-cp38-linux_x86_64.whl
 - paddleocr=2.7
 
+## 已知问题
 
+根据案例发现什么总结什么，背后的成因不清楚
 
+- python cuda cudnn 环境对结果的影响： cuda11.3 检出的结果少于 cuda 11.7
+- server 模型偶现检测不出的问题，换用蒸馏后的小模型可以检出
+- server 版本的模型环境配置不对的话，可能不报错但完全什么都检测不出来
